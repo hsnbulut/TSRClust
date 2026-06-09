@@ -1,0 +1,15 @@
+.DS_Store
+.RData
+.Rhistory
+.Rproj.user/
+*.csv
+*.rds
+*.docx
+*.tar.gz
+*.Rcheck/
+/B_RSRClust.R
+/Basit Uygulama.R
+/Simülasyon ICORS.R
+/TSRClust.R
+/TSRClust_Generic.R
+/robem.R

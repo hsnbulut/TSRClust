@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.RData$
+^\.Rhistory$
+^\.DS_Store$
+^.*\.csv$
+^.*\.rds$
+^.*\.docx$
+^[^/]+\.R$
+^README_files$
