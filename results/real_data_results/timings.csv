@@ -1,0 +1,12 @@
+"dataset","method","preprocess_seconds","macro_seconds","micro_seconds","end_to_end_seconds"
+"Italian_Olive_Oil","TCLUST",0.001,0.851,0,0.852
+"Italian_Olive_Oil","TSRClust_validated",0.001,0.851,1.346,2.198
+"Italian_Olive_Oil","TSRClust_unvalidated",0.001,0.851,0,0.852
+"Italian_Olive_Oil","DBSCAN_full",0.001,0,0,0.013
+"Italian_Olive_Oil","HDBSCAN_full",0.001,0,0,0.013
+"Italian_Olive_Oil","OTRIMLE_fixedK",0.001,0,0,1.101
+"Italian_Olive_Oil","tEIGEN_BIC",0.001,0,0,13.295
+"Statlog_Shuttle","TCLUST",0.0659999999999989,32.139,0,32.205
+"Statlog_Shuttle","TSRClust_validated",0.0659999999999989,32.139,4.565,36.77
+"Statlog_Shuttle","TSRClust_unvalidated",0.0659999999999989,32.139,0.100000000000001,32.305
+"Statlog_Shuttle","DBSCAN_full",0.0659999999999989,0,0,2.812

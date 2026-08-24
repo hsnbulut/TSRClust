@@ -1,0 +1,12 @@
+"dataset","method","MacroLabelARI"
+"Italian_Olive_Oil","TCLUST",0.925416118798202
+"Italian_Olive_Oil","TSRClust_validated",0.916090386447575
+"Italian_Olive_Oil","TSRClust_unvalidated",0.925416118798202
+"Italian_Olive_Oil","DBSCAN_full",0.176317433066604
+"Italian_Olive_Oil","HDBSCAN_full",0.892380974426269
+"Italian_Olive_Oil","OTRIMLE_fixedK",0.70923001381766
+"Italian_Olive_Oil","tEIGEN_BIC",0.475741400640018
+"Statlog_Shuttle","TCLUST",0.534907323494662
+"Statlog_Shuttle","TSRClust_validated",0.534176705601592
+"Statlog_Shuttle","TSRClust_unvalidated",0.535635752369821
+"Statlog_Shuttle","DBSCAN_full",0.364152390254355

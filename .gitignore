@@ -13,3 +13,8 @@
 /TSRClust.R
 /TSRClust_Generic.R
 /robem.R
+
+# Final TSRClust reproducibility results
+!results/real_data_results/*.csv
+!results/simulation_design/*.csv
+!results/summary_results/*.csv

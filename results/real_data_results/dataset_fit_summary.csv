@@ -1,0 +1,3 @@
+"dataset","n","p","k","alpha","c","residual_n","micro_q","micro_p_value"
+"Italian_Olive_Oil",572,7,3,0.1,100,58,1,0.02
+"Statlog_Shuttle",58000,9,2,0.05,20,2900,11,0.02

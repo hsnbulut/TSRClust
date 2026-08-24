@@ -1,0 +1,12 @@
+"dataset","method","n_residual","ResidualLocalARI","ResidualAssignedFraction"
+"Italian_Olive_Oil","TCLUST",58,0,0
+"Italian_Olive_Oil","TSRClust_validated",58,0.0196499123472619,0.517241379310345
+"Italian_Olive_Oil","TSRClust_unvalidated",58,0,1
+"Italian_Olive_Oil","DBSCAN_full",58,-0.0286680073595482,0.344827586206897
+"Italian_Olive_Oil","HDBSCAN_full",58,-0.020767268148285,0.431034482758621
+"Italian_Olive_Oil","OTRIMLE_fixedK",58,-0.0982833180448171,0.327586206896552
+"Italian_Olive_Oil","tEIGEN_BIC",58,0.231157997119503,1
+"Statlog_Shuttle","TCLUST",2900,0,0
+"Statlog_Shuttle","TSRClust_validated",2900,-0.171137601088306,0.176206896551724
+"Statlog_Shuttle","TSRClust_unvalidated",2900,0.40399081844704,0.908275862068965
+"Statlog_Shuttle","DBSCAN_full",2900,0.0285303728931848,0.67551724137931
