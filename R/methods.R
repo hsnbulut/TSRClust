@@ -61,7 +61,7 @@ plot.tsrclust <- function(x, data, pca = TRUE, ...) {
                           Cluster = factor(x$cluster),
                           Type = factor(type, levels = c("Main clusters", "Structural minorities", "Noise")))
     return(
-      ggplot2::ggplot(plot_df, ggplot2::aes_string("X1", "X2", color = "Cluster", shape = "Type")) +
+      ggplot2::ggplot(   plot_df,   ggplot2::aes(x = X1, y = X2, color = Cluster, shape = Type) ) +
         ggplot2::geom_point(alpha = 0.75, size = 2) +
         ggplot2::labs(x = xlab, y = ylab, color = "Cluster", shape = "Type") +
         ggplot2::theme_minimal()
