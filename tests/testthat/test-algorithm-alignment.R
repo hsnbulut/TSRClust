@@ -127,7 +127,7 @@ test_that("print, summary, plot, and evaluate_tsrclust do not break", {
   fit <- tsrclust(dat$x, k = 2, alpha = 0.10, restr_fact = 20,
                   validated = FALSE, nstart = 20)
 
-  expect_silent(print(fit))
+  expect_output(print(fit), "TSRClust fit")
   expect_s3_class(summary(fit), "summary.tsrclust")
   expect_silent(plot(fit, dat$x))
   expect_s3_class(evaluate_tsrclust(dat$truth, fit$cluster), "data.frame")
