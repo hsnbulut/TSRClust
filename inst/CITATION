@@ -1,0 +1,16 @@
+citHeader("To cite TSRClust in publications, use:")
+
+citEntry(
+  entry = "Manual",
+  title = "TSRClust: Two-Stage Robust Clustering for Structural Minority Discovery",
+  author = person("Hasan", "Bulut"),
+  year = "2026",
+  note = "R package version 1.0.0",
+  url = "https://github.com/hsnbulut/TSRClust",
+
+  textVersion = paste(
+    "Bulut, H. (2026). TSRClust: Two-Stage Robust Clustering for",
+    "Structural Minority Discovery. R package version 1.0.0.",
+    "https://github.com/hsnbulut/TSRClust"
+  )
+)

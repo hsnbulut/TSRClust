@@ -4,6 +4,7 @@ print.tsrclust <- function(x, ...) {
   cat("  Main clusters: ", x$n_main, "\n", sep = "")
   cat("  Structural minorities: ", x$n_minority, "\n", sep = "")
   cat("  Residual noise points: ", x$n_noise, "\n", sep = "")
+  cat("  Standardized analysis space: ", x$standardized, "\n", sep = "")
   invisible(x)
 }
 

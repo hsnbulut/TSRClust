@@ -12,19 +12,26 @@ tsrclust <- function(x, k = NULL, alpha = NULL, restr_fact = 20,
                      min_density_ratio = 2,
                      novelty_prob = 0.995,
                      eps_quantile = 0.90,
+                     eps_grid_size = 31L,
                      standardize = TRUE,
                      ...) {
   call <- match.call()
   x <- .as_numeric_matrix(x)
+  x_analysis <- if (standardize) .robust_standardize(x) else x
   macro_method <- match.arg(macro_method)
   macro_ic <- match.arg(macro_ic)
+  restr_fact_for_macro <- if (auto_macro && is.null(call$restr_fact)) NULL else restr_fact
   min_pts <- if (is.null(min_pts)) max(5L, 2L * ncol(x)) else as.integer(min_pts)
+  eps_grid_size <- as.integer(eps_grid_size)
   if (min_pts < 2L) {
     stop("min_pts must be at least 2.", call. = FALSE)
   }
+  if (length(eps_grid_size) != 1L || is.na(eps_grid_size) || eps_grid_size < 2L) {
+    stop("eps_grid_size must be a scalar integer of at least 2.", call. = FALSE)
+  }
 
   macro <- .fit_macro_stage(
-    x = x, k = k, alpha = alpha, restr_fact = restr_fact,
+    x = x_analysis, k = k, alpha = alpha, restr_fact = restr_fact_for_macro,
     macro_method = macro_method, auto_macro = auto_macro,
     k_grid = k_grid, alpha_grid = alpha_grid, c_grid = c_grid,
     macro_ic = macro_ic, ...
@@ -38,19 +45,19 @@ tsrclust <- function(x, k = NULL, alpha = NULL, restr_fact = 20,
                      threshold = NA_real_, n_candidates = 0L)
 
   if (length(residual_index) >= min_pts) {
-    x_distance <- if (standardize) .robust_standardize(x) else x
-    residual_x <- x_distance[residual_index, , drop = FALSE]
+    residual_x <- x_analysis[residual_index, , drop = FALSE]
 
     if (is.null(eps)) {
       if (validated) {
-        macro_reference <- .make_macro_reference(x_distance, macro_labels, main_k)
+        macro_reference <- .make_macro_reference(x_analysis, macro_labels, main_k)
         novelty_threshold <- stats::qchisq(novelty_prob, df = ncol(x))
         micro_result <- .discover_validated_microclusters(
           residual_x, min_pts = min_pts, null_reps = as.integer(null_reps),
           structure_alpha = structure_alpha,
           min_density_ratio = min_density_ratio,
           macro_reference = macro_reference,
-          novelty_threshold = novelty_threshold
+          novelty_threshold = novelty_threshold,
+          eps_grid_size = eps_grid_size
         )
       } else {
         selected_eps <- .select_eps_knn(residual_x, min_pts, eps_quantile)
@@ -84,10 +91,12 @@ tsrclust <- function(x, k = NULL, alpha = NULL, restr_fact = 20,
     n_minority = length(unique(final_labels[final_labels > main_k])),
     n_noise = sum(final_labels == 0L),
     min_pts = min_pts,
+    eps_grid_size = eps_grid_size,
     macro_method = macro_method,
     macro_model = macro$model,
     macro_parameters = macro$parameters,
     macro_selection = macro$selection,
+    standardized = standardize,
     micro_info = micro_info,
     call = call
   )
@@ -150,6 +159,13 @@ tsrclust <- function(x, k = NULL, alpha = NULL, restr_fact = 20,
     model = model,
     cluster = as.integer(model$cluster),
     parameters = list(k = as.integer(best$k), alpha = best$alpha, restr_fact = best$restr_fact),
-    selection = list(criterion = macro_ic, selected_value = best$ic, candidates = candidates)
+    selection = list(
+      criterion = macro_ic,
+      selected_value = best$ic,
+      candidates = candidates,
+      scanned_k_grid = kk,
+      scanned_alpha_grid = aa,
+      scanned_c_grid = cc
+    )
   )
 }

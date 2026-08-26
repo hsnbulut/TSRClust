@@ -1,15 +1,17 @@
 Package: TSRClust
 Type: Package
 Title: Two-Stage Robust Clustering for Structural Minority Discovery
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: c(
-    person("Hasan", "Bulut", role = c("aut", "cre"), email = "hasan.bulut@example.com")
+    person("Hasan", "Bulut", role = c("aut", "cre"), email = "hasan.bulut@omu.edu.tr")
   )
 Author: Hasan Bulut [aut, cre]
-Maintainer: Hasan Bulut <hasan.bulut@example.com>
+Maintainer: Hasan Bulut <hasan.bulut@omu.edu.tr>
 Description: Implements Two-Stage Robust Clustering (TSRClust), a method that
     first estimates dominant clusters using trimmed robust clustering and then
     revisits the trimmed residual set to detect dense structural minorities.
+    When requested, robust standardisation is performed before Stage-I macro
+    clustering and the same analysis space is used for residual discovery.
     The package provides the main clustering routine, simulation helpers, basic
     external evaluation metrics, and summary and plotting methods.
 License: MIT + file LICENSE
@@ -24,5 +26,7 @@ Imports:
     utils
 Suggests:
     ggplot2,
-    mlbench
+    mlbench,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 NeedsCompilation: no

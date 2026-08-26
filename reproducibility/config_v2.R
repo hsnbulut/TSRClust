@@ -1,0 +1,23 @@
+TSR_V2 <- list(
+  base_seed = 20260819L,
+  nstart = 500L,
+  null_reps = 49L,
+  structure_alpha = 0.05,
+  min_density_ratio = 2,
+  novelty_prob = 0.995,
+  eps_quantile = 0.90,
+  eps_grid_size = 31L,
+  otrimle_erc = 20,
+  otrimle_npr_max = 0.50,
+  teigen_g_extra = 2L,
+  competitor_pilot_reps = 20L,
+  olive_k = 3L,
+  olive_alpha = 0.10,
+  olive_c_grid = c(1, 5, 20, 100),
+  olive_c = 100,
+  olive_auto_k = 6L,
+  olive_auto_c = 20,
+  shuttle_k = 2L,
+  shuttle_alpha = 0.05,
+  shuttle_c = 20
+)

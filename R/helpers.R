@@ -147,14 +147,15 @@
 
 .discover_validated_microclusters <- function(x, min_pts, null_reps,
                                               structure_alpha, min_density_ratio,
-                                              macro_reference, novelty_threshold) {
+                                              macro_reference, novelty_threshold,
+                                              eps_grid_size = 31L) {
   empty_result <- list(cluster = integer(nrow(x)), eps = NA_real_, p_value = 1,
                        score = 0, threshold = NA_real_, n_candidates = 0L)
   if (nrow(x) < min_pts) {
     return(empty_result)
   }
 
-  eps_grid <- .make_eps_grid(x, min_pts)
+  eps_grid <- .make_eps_grid(x, min_pts, eps_grid_size)
   observed <- .scan_dbscan_candidates(
     x, min_pts, eps_grid, min_density_ratio, macro_reference, novelty_threshold
   )
