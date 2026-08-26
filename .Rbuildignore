@@ -3,6 +3,12 @@
 ^\.RData$
 ^\.Rhistory$
 ^\.DS_Store$
+^\.gitignore$
+^\.gitattributes$
+^\.github$
+^CITATION$
+^reproducibility$
+^results$
 ^.*\.csv$
 ^.*\.rds$
 ^.*\.docx$
