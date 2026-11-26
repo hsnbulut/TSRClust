@@ -1,0 +1,22 @@
+\begin{table}[!htbp]
+\caption{\revhl{All-observation external-label agreement and conditional residual diagnostics.}}
+\label{tab:realdata-results}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{llrrrr}
+\hline
+Dataset & Method & \revhl{External ARI} & \revhl{Residual ARI} & \shortstack{\revhl{Assigned}\\\revhl{fraction}} & Seconds \\
+\hline
+Italian Olive Oil & DBSCAN & 0.176 & -0.029 & 0.345 & 0.013 \\
+Italian Olive Oil & HDBSCAN & 0.892 & -0.021 & 0.431 & 0.013 \\
+Italian Olive Oil & OTRIMLE fixed K & 0.709 & -0.098 & 0.328 & 1.101 \\
+Italian Olive Oil & TCLUST & 0.925 & 0.000 & 0.000 & 0.852 \\
+Italian Olive Oil & tEIGEN BIC & 0.476 & 0.231 & 1.000 & 13.295 \\
+Italian Olive Oil & TSRClust & 0.916 & 0.020 & 0.517 & 2.198 \\
+Statlog Shuttle & DBSCAN & 0.364 & 0.029 & 0.676 & 2.812 \\
+Statlog Shuttle & TCLUST & 0.535 & 0.000 & 0.000 & 32.205 \\
+Statlog Shuttle & TSRClust & 0.534 & -0.171 & 0.176 & 36.770 \\
+\hline
+\end{tabular}
+\end{table}

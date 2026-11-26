@@ -1,0 +1,30 @@
+\begin{table}[!htbp]
+\caption{\revhl{Existing unknown-count comparisons under two fixed candidate ranges.}}
+\label{tab:c4-selected-results}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+\rowcolor{RevisionBackground} Scenario & Method & $m$ & MajorARI & CF1 & EF1 & Spur & Seconds \\
+\midrule
+\rowcolor{RevisionBackground} Negative & TSRClust & 3 & 0.852 & -- & -- & 0.000 & 1.336 \\
+\rowcolor{RevisionBackground} Negative & TSRClust & 7 & 0.849 & -- & -- & 0.000 & 4.243 \\
+\rowcolor{RevisionBackground} Negative & tEIGEN & 3 & 0.926 & -- & -- & 0.070 & 23.068 \\
+\rowcolor{RevisionBackground} Negative & tEIGEN & 7 & 0.780 & -- & -- & 0.810 & 90.282 \\
+\rowcolor{RevisionBackground} Isolated & TSRClust & 3 & 0.834 & 0.976 & 0.976 & 0.000 & 1.516 \\
+\rowcolor{RevisionBackground} Isolated & TSRClust & 7 & 0.817 & 0.979 & 0.953 & 0.090 & 4.612 \\
+\rowcolor{RevisionBackground} Isolated & tEIGEN & 3 & 0.948 & 0.853 & 0.853 & 0.000 & 11.038 \\
+\rowcolor{RevisionBackground} Isolated & tEIGEN & 7 & 0.509 & 0.985 & 0.215 & 3.090 & 74.353 \\
+\rowcolor{RevisionBackground} Two minorities & TSRClust & 3 & 0.820 & 0.818 & 0.810 & 0.030 & 3.235 \\
+\rowcolor{RevisionBackground} Two minorities & TSRClust & 7 & 0.753 & 0.911 & 0.672 & 0.960 & 5.349 \\
+\rowcolor{RevisionBackground} Two minorities & tEIGEN & 3 & 0.660 & 0.459 & 0.719 & 0.000 & 13.016 \\
+\rowcolor{RevisionBackground} Two minorities & tEIGEN & 7 & 0.528 & 0.892 & 0.231 & 2.080 & 65.040 \\
+\rowcolor{RevisionBackground} Weak & TSRClust & 3 & 0.615 & 0.000 & 0.000 & 0.000 & 0.810 \\
+\rowcolor{RevisionBackground} Weak & TSRClust & 7 & 0.616 & 0.000 & 0.000 & 0.000 & 2.735 \\
+\rowcolor{RevisionBackground} Weak & tEIGEN & 3 & 0.708 & 0.313 & 0.313 & 0.000 & 9.905 \\
+\rowcolor{RevisionBackground} Weak & tEIGEN & 7 & 0.471 & 0.662 & 0.199 & 1.320 & 55.523 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\begin{minipage}{\linewidth}\scriptsize
+\revhl{Each row summarizes 100 paired datasets per scenario; ranges and methods reuse those datasets. Candidate counts are $1{:}m$. TSRClust fixes $\alpha=.10,c=20$; tEIGEN has no trimming input. CF1 is MinorityClusterF1; EF1 is all-extra detection F1; Spur is the mean unmatched-extra count. Negative-control minority F1 is undefined. End-to-end seconds include the entire selection/refit pipeline. With two minorities, $m=3$ excludes true total count four for tEIGEN. External minority matches can include selected Stage-I components. Full range-5 results, selected-count distributions, native acceptances and pointwise paired intervals are supplied in the comment-specific evidence.}
+\end{minipage}
+\end{table}

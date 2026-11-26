@@ -1,0 +1,114 @@
+\documentclass[pdflatex,sn-nature]{sn-jnl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{url}
+
+\begin{document}
+
+\title{Supplementary Information for TSRClust}
+\author{Hasan Bulut}
+\maketitle
+
+\section*{Supplementary Methods}
+
+This file summarizes supporting material for the TSRClust manuscript. The full
+replication-level simulation exports, design manifests, real-data outputs, and
+analysis scripts are supplied separately in the reproducibility bundle rather
+than reproduced as large tables in this PDF.
+
+\section*{S1. Complete Simulation Design}
+
+The simulation design is defined by three manifest groups: architecture,
+stress, and negative control. The architecture study used 80 cells and 35,200
+generated datasets; the stress study used 30 cells and 9,000 generated
+datasets; and the expanded negative-control study used 10 cells and 10,000
+generated datasets. The design manifests are provided in
+\texttt{results/simulation\_design/}.
+
+\section*{S2. Architecture Cell-Level Results}
+
+Architecture cell summaries are provided in the file
+\texttt{architecture\_cell\_summary.csv} under
+\texttt{results/summary\_results/}. These
+summaries report method-level performance within each design cell and support
+the pooled architecture results in the main text.
+
+\section*{S3. Stress Cell-Level Results}
+
+Stress cell summaries are provided in \texttt{stress\_cell\_summary.csv} under
+\texttt{results/summary\_results/}. These summaries
+identify the one-factor departures under which minority recovery is retained or
+lost, including high dimension, weak separation, heavy-tailed macro
+populations, diffuse minorities, adjacent minorities, and alternative residual
+noise mechanisms.
+
+\section*{S4. Negative-Control Results}
+
+Negative-control summaries are provided in
+\texttt{negative\_control\_cell\_summary.csv} and
+\texttt{negative\_control\_pooled.csv} under
+\texttt{results/summary\_results/}. In the pooled
+expanded negative control, TSRClust produced 3 false micro-discoveries in
+10,000 successful evaluations, giving an estimated probability of 0.0003 and an
+exact 95\% binomial confidence interval of [0.00006, 0.00088]. TSRClust without
+validation produced a false micro-discovery in every negative-control run.
+
+\section*{S5. Paired Comparisons And Validation Ablation}
+
+Paired method comparisons against TSRClust are provided for the
+architecture, stress, and negative-control studies in the corresponding
+\texttt{*\_paired\_vs\_TSRvalidated.csv} files. These files report paired
+differences and Monte Carlo standard errors.
+
+\input{table_s1_validation_ablation.tex}
+
+\section*{S6. Monte Carlo Uncertainty}
+
+Monte Carlo uncertainty for the false micro-discovery estimate is summarized by
+the exact binomial interval above. For other simulation metrics, uncertainty is
+reported through cell-level summaries and paired-comparison standard errors in
+the reproducibility result files.
+
+\section*{S7. OTRIMLE Sensitivity Analysis}
+
+OTRIMLE was included as an improper-likelihood noise-component competitor. The
+main manuscript reports the fixed-\(K\) OTRIMLE results used in the headline
+comparison. Sensitivity outputs are included in the reproducibility result
+folders so that the fixed-\(K\) choice can be inspected without expanding the
+main display budget.
+
+\section*{S8. Detailed Runtime Summaries}
+
+Runtime summaries are provided in the architecture, stress, negative-control,
+and real-data summary files. Reported end-to-end runtime includes preprocessing
+and every stage needed to obtain final labels.
+
+\section*{S9. Real-Data Trimming Rates}
+
+Class-specific trimming rates for the Italian Olive Oil and Statlog Shuttle
+analyses are provided in \texttt{class\_trimming\_rates.csv} under
+\texttt{results/real\_data\_results/}. These rates
+document how Stage-I trimming interacts with external reference classes.
+
+\section*{S10. Real-Data Microcluster Compositions}
+
+Accepted residual micro-cluster compositions are provided in
+\texttt{olive\_microcluster\_composition.csv} and
+\texttt{shuttle\_microcluster\_composition.csv} under
+\texttt{results/real\_data\_results/}.
+The Shuttle outputs show pure local Bypass-dominated micro-clusters but also
+fragmentation of the external Bypass class, consistent with the negative
+residual local ARI reported in the main text.
+
+\section*{S11. Supplementary Real-Data Visualisation}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig6_realdata_microclusters.pdf}
+\caption{Accepted real-data TSRClust micro-clusters. Bar heights show accepted
+residual micro-cluster sizes; fill identifies the dominant external class.}
+\label{fig:supp-realdata-microclusters}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,17 @@
+\begin{table}[!htbp]
+\caption{\revhl{Evaluation targets and scoring populations.}}
+\label{tab:c1-metric-framework}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{p{0.22\linewidth}p{0.32\linewidth}X}
+\toprule
+\rowcolor{RevisionBackground} Measure & Population and reference & Scientific target and applicability \\
+\midrule
+\rowcolor{RevisionBackground} MajorARI; major retention & Known true macro observations & Partition preservation and retained status in simulations; these assess different properties. \\
+\rowcolor{RevisionBackground} Global or external-label ARI & All observations; the stated complete reference partition & Overall agreement in simulations or labelled applications. Reference granularity must be stated. \\
+\rowcolor{RevisionBackground} MinorityClusterF1 & True minority groups matched one-to-one after macro matching & Separate structural recovery in simulations. Unmatched true groups score zero; unmatched extra clusters need complementary diagnostics. \\
+\rowcolor{RevisionBackground} Matched-union F1; all-extra F1 & All observations, with minority-matched labels or all eligible extra labels positive & Pointwise recovery under distinct positive-set definitions. Neither establishes correct partitioning of multiple minorities. \\
+\rowcolor{RevisionBackground} Noise recall; false-extra assignment; extra counts & Known generated noise or nonminority observations; whole fitted partition & Noise classification and spurious discovery in simulations. No verified noise reference is available in the real applications. \\
+\rowcolor{RevisionBackground} Residual ARI; assigned fraction; purity & Fixed Stage-I TCLUST residual set or each accepted residual cluster; external local classes & Conditional agreement, assignment coverage and class homogeneity in applications. These are not minority-recovery F1 scores. \\
+\bottomrule
+\end{tabularx}
+\end{table}

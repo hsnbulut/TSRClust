@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\caption{\revhl{Consolidated sensitivity of four TSRClust parameters in completed matched experiments.}}
+\label{tab:r2c4-sensitivity}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}p{.12\textwidth}p{.20\textwidth}X p{.23\textwidth}@{}}
+\toprule
+\rowcolor{RevisionBackground} Parameter & Tested settings & Isolated-positive comparison & False discovery and scope \\
+\midrule
+\rowcolor{RevisionBackground} Density ratio $d_0$ & $1.5,2,2.5,3$; default 2; alternative 1.5 & CF1 0.73920 to 0.77957; paired $\Delta=0.04036$, 95\% interval $[0.01105,0.06968]$. Native 165 to 179/200. Seconds 1.382 to 1.456. & Zero native false discoveries in standalone uniform controls; joint relaxation with support five gives 2/200. Macro reassignment increases. \\
+\rowcolor{RevisionBackground} Novelty probability & $.95,.975,.99$, $ .995,.999$; default $.995$; alternative $.999$ & CF1 0.73920 to 0.74918; paired $\Delta=0.00998$, 95\% interval $[0.00553,0.01442]$. Native 165 to 165/200. Seconds 1.401 to 1.399. & Adjacent/overlapping minorities remain missed. No nominal centroid error interpretation; threshold sweeps lack adverse backgrounds. \\
+\rowcolor{RevisionBackground} Local support & $\max(5,ap)$, $a=1,2,3,4$; at $p=5$: 5,10,15,20; default 10; alternative 5 & CF1 0.73920 to 0.80799; paired $\Delta=0.06878$, 95\% interval $[0.03578,0.10178]$. Native 165 to 178/200. Seconds 1.382 to 1.912. & Whole-pipeline change, not support alone. Uniform-negative standalone sweep has 0/200 native events; $p=25$ has no recovery. \\
+\rowcolor{RevisionBackground} Null repetitions $B$ & $49,99,199$; default 49; alternative 199 & CF1 0.73920 to 0.73920; paired $\Delta=0.00000$, 95\% interval $[0.00000,0.00000]$. Native 165 to 165/200. Seconds 1.382 to 6.063. & Positive native acceptance and F1 unchanged; other sweep cases have no geometric candidates. Accepted-p boundary changes with $B$. \\
+\bottomrule
+\end{tabularx}
+\par\smallskip\begin{minipage}{\linewidth}\scriptsize
+\revhl{Each displayed contrast uses the same 200 datasets at $n=500,p=5$, minority fraction $.05$, uniform background, $K=2$, trimming $.10$, empirical reference and legacy rule, varying only the named input. Density, support and repetition rows use experiment C; novelty uses the previously reported experiment-B arm. Their scientific baseline is duplicated, so these are not independent replications of a default; timing remains specific to its recorded arm. CF1 is MinorityClusterF1; native is Stage-II acceptance. Seconds include preprocessing and full fitting/validation; resource conditions were not randomized. Continuous intervals are pointwise paired Monte Carlo 95\%, not simultaneous tuning guarantees. The C sweeps separately include negative, weak and $p=25$ cases (200 datasets each), reusing 800 datasets rather than multiplying sample size by settings. Negative-control minority F1 is undefined. Native acceptance differs from externally matched discovery. Detailed corrected all-extra F1, macro contamination, spurious counts, assignment fractions, paired intervals and factorial coverage are supplied in the comment-specific workbooks.}
+\end{minipage}
+\end{table}

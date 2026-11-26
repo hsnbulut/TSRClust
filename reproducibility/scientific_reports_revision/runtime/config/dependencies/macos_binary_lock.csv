@@ -1,0 +1,3 @@
+package,version,url,sha256
+teigen,2.2.2,https://cran.r-project.org/bin/macosx/big-sur-arm64/contrib/4.5/teigen_2.2.2.tgz,825b4fa2de1e06ce7983a4be017461af08b71971d3878916d131119bccc31ae2
+otrimle,2.0,https://cran.r-project.org/bin/macosx/big-sur-arm64/contrib/4.5/otrimle_2.0.tgz,19d4bc9d76a2bfe229101a1d8e943b2ea82936578290bd2ceb76c11e7e14be25

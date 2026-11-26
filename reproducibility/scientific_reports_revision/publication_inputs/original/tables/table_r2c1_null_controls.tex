@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\caption{\revhl{End-to-end negative controls in the separate Tier 1 revision study. Native Stage-II acceptance per 1, 000 datasets, with pointwise exact 95\% binomial intervals in percent.}}
+\label{tab:r2c1-null-controls}
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\arrayrulecolor{black}\rowcolors{1}{RevisionBackground}{RevisionBackground}
+\begin{tabular}{lrrll}
+\toprule Noise & $p$ & Trimming $\alpha$ & Legacy: $k/1000$ [95\%] & P-value only: $k/1000$ [95\%] \\
+\midrule
+Uniform & 2 & 0.10 & 32/1000 [2.20, 4.49] & 48/1000 [3.56, 6.31] \\
+Uniform & 2 & 0.20 & 22/1000 [1.38, 3.31] & 36/1000 [2.53, 4.95] \\
+Uniform & 5 & 0.10 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Uniform & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Corr. Gaussian & 2 & 0.10 & 130/1000 [10.98, 15.24] & 185/1000 [16.14, 21.05] \\
+Corr. Gaussian & 2 & 0.20 & 106/1000 [8.76, 12.68] & 154/1000 [13.22, 17.79] \\
+Corr. Gaussian & 5 & 0.10 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Corr. Gaussian & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Beta gradient & 2 & 0.10 & 120/1000 [10.05, 14.18] & 174/1000 [15.10, 19.89] \\
+Beta gradient & 2 & 0.20 & 114/1000 [9.50, 13.53] & 176/1000 [15.29, 20.10] \\
+Beta gradient & 5 & 0.10 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Beta gradient & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Multiv. t3 & 2 & 0.10 & 205/1000 [18.04, 23.14] & 295/1000 [26.69, 32.43] \\
+Multiv. t3 & 2 & 0.20 & 343/1000 [31.36, 37.34] & 427/1000 [39.61, 45.83] \\
+Multiv. t3 & 5 & 0.10 & 1/1000 [0.00, 0.56] & 1/1000 [0.00, 0.56] \\
+Multiv. t3 & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Bridge & 2 & 0.10 & 59/1000 [4.52, 7.54] & 66/1000 [5.14, 8.32] \\
+Bridge & 2 & 0.20 & 33/1000 [2.28, 4.60] & 49/1000 [3.65, 6.43] \\
+Bridge & 5 & 0.10 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Bridge & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Corr. sheet & 2 & 0.10 & 261/1000 [23.40, 28.94] & 307/1000 [27.85, 33.66] \\
+Corr. sheet & 2 & 0.20 & 344/1000 [31.46, 37.44] & 401/1000 [37.05, 43.21] \\
+Corr. sheet & 5 & 0.10 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+Corr. sheet & 5 & 0.20 & 0/1000 [0.00, 0.37] & 0/1000 [0.00, 0.37] \\
+\bottomrule
+\end{tabular}
+\par\smallskip\noindent\begin{minipage}{\linewidth}\scriptsize\begin{revblock}Each row is one fixed population, not a pooled noise-family estimate. All use $n=500$, two normal elliptical macro groups, separation six, no true minority,$B=49$, density ratio two and novelty .995. Actual residual sizes are 50 or 100; support is five for $p=2$ and ten for $p=5$. The heterogeneous label denotes independent scaled Beta(2, 1) coordinates. Native and externally matched discovery events coincide except for correlated-sheet $p=5,\alpha=.20$:external \texttt{AnyMicroDiscovery} is 40/1000 under each rule while native acceptance is zero. Those extras arise without native Stage-II discovery.\end{revblock}\end{minipage}
+\end{table}

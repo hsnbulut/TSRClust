@@ -1,0 +1,13 @@
+"item","value"
+"architecture_cells",80
+"architecture_datasets",35200
+"stress_cells",30
+"stress_datasets",9000
+"negative_control_cells",10
+"negative_control_datasets",10000
+"total_method_evaluations",461800
+"negative_control_false_micro_count",3
+"negative_control_false_micro_denominator",10000
+"negative_control_false_micro_probability",3e-04
+"negative_control_false_micro_exact95_low",6.1871485748387e-05
+"negative_control_false_micro_exact95_high",0.000876474522514001

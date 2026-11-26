@@ -1,0 +1,32 @@
+# No package installation or model fitting. All child processes are fresh.
+source('R/library_environment.R');lib<-initialize_revision_library(required=TRUE)
+stopifnot(as.character(getRversion())=='4.5.2')
+out<-Sys.getenv('TSR_ACCEPTANCE_RUN_DIR',file.path('results','environment_fix','local_20261119'))
+dir.create(out,recursive=TRUE,showWarnings=FALSE)
+# Preserve a read-only fingerprint of the entire existing 17-package library.
+files<-list.files(lib,recursive=TRUE,full.names=TRUE,all.files=TRUE)
+files<-files[!file.info(files)$isdir];before_hash<-tools::md5sum(files)
+runner<-Sys.getenv('TSR_RSCRIPT',normalizePath('scripts/tsr_rscript.sh'))
+flags<-character()
+run_child<-function(mode,file) {
+ output<-system2(runner,c(flags,'tests/child_library_probe.R',mode,shQuote(file)),stdout=TRUE,stderr=TRUE)
+ status<-attr(output,'status');if(!is.null(status)&&status!=0)stop(paste(output,collapse='\n'))
+ cat(output,sep='\n');readRDS(file)
+}
+# Reproduce why a parent's .libPaths() update cannot initialize another process.
+old<-Sys.getenv(c('R_LIBS','R_LIBS_USER','R_LIBS_SITE'),unset=NA_character_)
+empty<-tempfile('empty-child-library-');dir.create(empty)
+Sys.setenv(R_LIBS='',R_LIBS_USER=empty,R_LIBS_SITE='NULL')
+raw<-run_child('raw',file.path(out,'child_raw_paths.rds'))
+stopifnot(raw$expected_visible,normalizePath(raw$before$libPaths[1])==lib)
+fixed<-run_child('redirect',file.path(out,'child_redirect_fixed.rds'))
+stopifnot(!lib%in%fixed$before$libPaths,all(fixed$checks$loaded&fixed$checks$isolated&fixed$checks$version_matches))
+Sys.setenv(R_LIBS_USER=lib)
+normal<-run_child('normal',file.path(out,'child_normal.rds'))
+stopifnot(all(normal$checks$loaded&normal$checks$isolated&normal$checks$version_matches))
+for(nm in names(old))if(is.na(old[[nm]]))Sys.unsetenv(nm) else do.call(Sys.setenv,setNames(list(old[[nm]]),nm))
+initialize_revision_library(lib,required=TRUE)
+stopifnot(identical(before_hash,tools::md5sum(files)))
+write.csv(normal$checks,file.path(out,'fresh_child_packages.csv'),row.names=FALSE)
+write.csv(data.frame(check=c('central launcher repairs inherited child library before target bootstrap','explicit bootstrap repairs redirected child library','fresh normal child loads all 17 exact isolated packages','existing library file hashes unchanged'),status='PASS'),file.path(out,'library_child_regression.csv'),row.names=FALSE)
+cat('LIBRARY_CHILD_REGRESSION_OK 4; EXISTING_LIBRARY_UNCHANGED\n')

@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\caption{Final simulation design and scale.}
+\label{tab:simulation-design}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{p{0.16\linewidth}p{0.26\linewidth}rrrp{0.24\linewidth}}
+\hline
+Study & Purpose & Cells & Datasets & Evaluations & Main factors \\
+\hline
+Architecture & Canonical architecture grid & 80 & 35200 & 300800 & $n$, $p$, separation, covariance, N0/M1--M4 \\
+Stress & One-factor stress departures & 30 &  9000 &  81000 & $n$, $p$, $K$, separation, tails, imbalance, minority geometry, noise \\
+Negative control & No-minority residual controls & 10 & 10000 &  80000 & $p$, residual fraction, tails, diffuse-noise type, $q=0$ \\
+\hline
+\end{tabular}
+\end{table}

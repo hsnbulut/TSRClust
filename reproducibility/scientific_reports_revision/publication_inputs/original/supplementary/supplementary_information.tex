@@ -1,0 +1,28 @@
+\documentclass[pdflatex,sn-nature]{sn-jnl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\begin{document}
+\title{Supplementary Information for TSRClust}
+\author{Hasan Bulut}
+\maketitle
+\section*{Supplementary Methods}
+The reproducibility files contain the complete simulation manifests and replication-level result exports. The architecture study used 80 cells and 35,200 generated datasets; the stress study used 30 cells and 9,000 generated datasets; and the expanded negative-control study used 10 cells and 10,000 generated datasets.
+\section*{S1. Complete simulation design}
+Architecture, stress, and negative-control cell-summary CSV files provide compact cell-level summaries. Full replication-level results are provided with the reproducibility package rather than reproduced as large tables here.
+\section*{S2. Paired comparisons}
+Architecture, stress, and negative-control paired-comparison CSV files contain method differences against TSRClust with Monte Carlo standard errors.
+\input{table_s1_validation_ablation.tex}
+\section*{S3. Monte Carlo uncertainty}
+For expanded negative controls, TSRClust produced 3 false micro-discoveries in 10000 successful evaluations, giving an estimated probability of 0.0003 with an exact 95\% binomial confidence interval of [0.00006, 0.00088]. TSRClust without validation produced a false micro-discovery in every negative-control run.
+\section*{S4. OTRIMLE sensitivity and runtime}
+OTRIMLE sensitivity outputs and detailed runtime summaries are included in the reproducibility results folders. The main text reports the fixed-\(K\) OTRIMLE results used in the headline comparison.
+\section*{S5. Real-data details}
+Real-data supplementary CSV files provide class-specific trimming rates and accepted residual micro-cluster compositions for the olive-oil and Shuttle analyses.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../figures/fig6_realdata_microclusters.pdf}
+\caption{Accepted real-data TSRClust micro-clusters. Bar heights show accepted residual micro-cluster sizes; fill identifies the dominant external class.}
+\label{fig:supp-realdata-microclusters}
+\end{figure}
+\end{document}
