@@ -1,0 +1,11 @@
+a<-commandArgs(TRUE);if(length(a)<2)stop('Usage check_complete.R manifest output_dir')
+t<-read.csv(a[1]);out<-a[2];z<-lapply(seq_len(nrow(t)),function(i) {
+ path<-file.path(out,sprintf('task_%06d.rds',t$task_id[i]));x<-tryCatch(readRDS(path),error=function(e)NULL)
+ expected<-seq.int(t$rep_start[i],t$rep_end[i]);ok<-integer();failed<-integer()
+ if(!is.null(x))for(v in x$results)if(v$row$status=='OK')ok<-c(ok,v$row$replication) else failed<-c(failed,v$row$replication)
+ data.frame(task_id=t$task_id[i],cell_id=t$cell_id[i],expected=length(expected),successful=sum(expected%in%ok),failed=sum(expected%in%failed),missing=sum(!expected%in%c(ok,failed)),retry=any(!expected%in%ok))
+})
+z<-do.call(rbind,z);dir.create(out,recursive=TRUE,showWarnings=FALSE)
+write.csv(z,file.path(out,'completeness.csv'),row.names=FALSE)
+writeLines(as.character(z$task_id[z$retry]),file.path(out,'retry_task_ids.txt'))
+print(colSums(z[c('expected','successful','failed','missing')]));cat('RETRY_TASKS',sum(z$retry),'\n')

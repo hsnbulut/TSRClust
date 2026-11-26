@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\caption{\revhl{Information supplied in the original simulations and the separate revision benchmark.}}
+\label{tab:c4-information}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{p{.25\linewidth}p{.31\linewidth}X}
+\toprule
+\rowcolor{RevisionBackground} Method or setting & Count and trimming inputs & Qualification \\
+\midrule
+\rowcolor{RevisionBackground} Original TSRClust, TCLUST, trimmed $k$-means & True dominant $K$; true residual fraction $\alpha$ & Oracle-assisted controls; fixed covariance restriction where applicable. \\
+\rowcolor{RevisionBackground} Original OTRIMLE & Regular-component $G=K$; no trimming input & Count-assisted; regular full-data components need not represent only macros. \\
+\rowcolor{RevisionBackground} Original tEIGEN--BIC & $G\in1{:}\min(6,K+\max(Q,1)+2)$ & BIC-selected $G$, but a truth-assisted search cap. \\
+\rowcolor{RevisionBackground} Oracle TCLUST & True $K+Q$ and generated-noise fraction & Upper reference; no individual truth assignments supplied. \\
+\rowcolor{RevisionBackground} Full-data DBSCAN/HDBSCAN & No $K$ or $Q$ supplied & Data-driven density rules with fixed dimension-based settings. \\
+\rowcolor{RevisionBackground} Revision D1-E & True $K$ where applicable; oracle total count separate & A shared integer $K$ is not equivalent component capacity for all methods. \\
+\rowcolor{RevisionBackground} Revision D2-E & $K/G\in1{:}m$, $m=3,5,7$, selected on $X$ & TSRClust keeps $\alpha=.10,c=20$ fixed. Numeric range parity does not equate structural targets. \\
+\bottomrule
+\end{tabularx}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\caption{Validation ablation summary for architecture and stress simulations.}
+\label{tab:supp-validation-ablation}
+\centering
+\tiny
+\setlength{\tabcolsep}{1pt}
+\begin{tabular}{llrrrrr}
+\hline
+Study & Method & MajorARI & Min. F1 & Any & AbsQ & Spur. \\
+\hline
+Architecture & TSRClust & 0.946 & 0.715 & 0.877 & 0.280 & 0.117 \\
+Architecture & TSRClust w/o val. & 0.946 & 0.606 & 1.000 & 0.567 & 0.495 \\
+Stress & TSRClust & 0.720 & 0.535 & 0.639 & 0.448 & 0.014 \\
+Stress & TSRClust w/o val. & 0.720 & 0.461 & 1.000 & 0.127 & 0.312 \\
+\hline
+\end{tabular}
+\begin{flushleft}\footnotesize Here, w/o val. denotes without validation. The architecture ablation summary pools 19,200 positive-scenario simulation replications (M1--M4), while the stress summary is based on 9,000 simulation replications. Detection F1 and runtime are included in the companion CSV file. The ablation removes only the Monte Carlo validation layer while retaining the same Stage-I residual set and Stage-II DBSCAN scan. Numerical values are copied from the final summary result files; no simulations are rerun.\end{flushleft}
+\end{table}

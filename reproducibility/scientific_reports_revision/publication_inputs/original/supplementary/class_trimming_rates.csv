@@ -1,0 +1,17 @@
+"dataset","local_class","total","trimmed","trim_rate"
+"Italian_Olive_Oil","Apulia.north",25,1,0.04
+"Italian_Olive_Oil","Calabria",56,0,0
+"Italian_Olive_Oil","Apulia.south",206,0,0
+"Italian_Olive_Oil","Sicily",36,0,0
+"Italian_Olive_Oil","Sardinia.inland",65,1,0.0153846153846154
+"Italian_Olive_Oil","Sardinia.coast",33,0,0
+"Italian_Olive_Oil","Liguria.east",50,3,0.06
+"Italian_Olive_Oil","Liguria.west",50,49,0.98
+"Italian_Olive_Oil","Umbria",51,4,0.0784313725490196
+"Statlog_Shuttle","Rad.Flow",45586,174,0.00381696134778221
+"Statlog_Shuttle","Fpv.Close",50,15,0.3
+"Statlog_Shuttle","Fpv.Open",171,4,0.0233918128654971
+"Statlog_Shuttle","High",8903,375,0.0421206334943278
+"Statlog_Shuttle","Bypass",3267,2309,0.706764615855525
+"Statlog_Shuttle","Bpv.Close",10,10,1
+"Statlog_Shuttle","Bpv.Open",13,13,1

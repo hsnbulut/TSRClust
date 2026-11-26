@@ -1,0 +1,37 @@
+\begin{table}[!htbp]
+\caption{Headline simulation results from final replication-level exports.}
+\label{tab:headline-results}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{llrrrr}
+\hline
+Study & Method & MajorARI & \shortstack{\revhl{Minority}\\\revhl{ClusterF1}} & Any/false micro & Median s \\
+\hline
+Architecture & Oracle TCLUST & 0.951 & 0.917 & 1.000 & 0.347 \\
+Architecture & TSRClust & 0.946 & 0.715 & 0.877 & 1.975 \\
+Architecture & TCLUST & 0.946 & 0.008 & 0.008 & 0.249 \\
+Architecture & tEIGEN BIC & 0.932 & 0.905 & 1.000 & 46.075 \\
+Architecture & OTRIMLE fixed K & 0.017 & 0.747 & 0.927 & 0.889 \\
+Architecture & HDBSCAN & 0.283 & 0.843 & 0.957 & 0.023 \\
+Architecture & DBSCAN & 0.315 & 0.818 & 0.864 & 0.007 \\
+Architecture & trimmed k-means & 0.238 & 0.000 & 0.000 & 0.137 \\
+Stress & Oracle TCLUST & 0.829 & 0.873 & 1.000 & 0.501 \\
+Stress & TSRClust & 0.720 & 0.535 & 0.639 & 1.698 \\
+Stress & TCLUST & 0.720 & 0.105 & 0.105 & 0.369 \\
+Stress & tEIGEN BIC & 0.801 & 0.886 & 0.984 & 59.688 \\
+Stress & OTRIMLE fixed K & 0.078 & 0.680 & 0.728 & 1.525 \\
+Stress & HDBSCAN & 0.014 & 0.667 & 0.730 & 0.033 \\
+Stress & DBSCAN & 0.000 & 0.386 & 0.419 & 0.020 \\
+Stress & trimmed k-means & 0.082 & 0.007 & 0.008 & 0.170 \\
+Negative control & TSRClust & 0.734 & -- & 0.0003 & 0.445 \\
+Negative control & TCLUST & 0.734 & -- & 0.000 & 0.380 \\
+Negative control & tEIGEN BIC & 0.813 & -- & 0.522 & 75.034 \\
+Negative control & OTRIMLE fixed K & 0.319 & -- & 0.036 & 2.831 \\
+Negative control & HDBSCAN & 0.014 & -- & 0.141 & 0.036 \\
+Negative control & DBSCAN & 0.000 & -- & 0.000 & 0.024 \\
+Negative control & trimmed k-means & 0.005 & -- & 0.000 & 0.179 \\
+\hline
+\end{tabular}
+\begin{flushleft}\footnotesize Architecture excludes the N0 negative-control scenario and pools M1--M4; Negative control has $q=0$, so the Any/false micro column is a false micro-discovery probability. Oracle TCLUST uses true macro-plus-minority cluster count and true noise proportion and is not a practical unsupervised competitor. Runtime is end-to-end median seconds. \revhl{The minority column is MinorityClusterF1. Any/false micro denotes the externally evaluated AnyMicroDiscovery event.}\end{flushleft}
+\end{table}

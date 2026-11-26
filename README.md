@@ -23,7 +23,7 @@ remotes::install_github("hsnbulut/TSRClust")
 From this local source checkout:
 
 ```r
-install.packages("RPackageNew/TSRClust", repos = NULL, type = "source")
+install.packages(".", repos = NULL, type = "source")
 ```
 
 ## Basic Example
@@ -86,3 +86,8 @@ str(shuttle)
 ```
 
 The official UCI dataset DOI is `10.24432/C5WS31`.
+
+
+## Scientific Reports revision
+
+The original submitted package, experiments and result exports remain identifiable at commit `61812b21a7abc04e518133c4593d5f9c15dae99d`. The completed revision's frozen design, separate experimental adapters, 98,800 scalar results, scientific derivations, parameter/null controls, contamination and Shuttle diagnostics are documented in [the revision reproduction guide](reproducibility/scientific_reports_revision/README.md). The guide maps manuscript and supplementary results to scripts and archived numerical inputs, supplies dependency pins and portable verification commands, and distinguishes original code from revision diagnostics. No original package implementation or original result was replaced.
